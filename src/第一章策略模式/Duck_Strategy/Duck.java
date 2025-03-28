@@ -1,4 +1,4 @@
-package 第一章設計模式.Duck_Strategy;
+package 第一章策略模式.Duck_Strategy;
 
 public abstract class Duck {
     // 建構子,不初始化,給子類決定具體行為

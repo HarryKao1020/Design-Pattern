@@ -1,4 +1,4 @@
-package 第一章設計模式.Payment_Strategy;
+package 第一章策略模式.Payment_Strategy;
 
 public class Client {
     public static void main(String[] args) {
