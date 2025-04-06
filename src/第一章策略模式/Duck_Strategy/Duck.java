@@ -9,7 +9,7 @@ public abstract class Duck {
     // 抽象方法,子類必須實作
     public abstract void display();
 
-    // 介面是超型態的一種
+    // 介面是超型態的一種 , 為什麼不宣告在public Duck()? 因為不是所有鴨子都要fly或quack的方法
     FlyBehavior flyBehavior; // 宣告超型態的引用變數
     QuackBehavior quackBehavior;
 

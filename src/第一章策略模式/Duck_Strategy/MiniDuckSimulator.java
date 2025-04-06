@@ -16,5 +16,9 @@ public class MiniDuckSimulator {
         rubber.performFly();
 
         System.out.println("--------------");
+
+        Duck plasticDuck = new PlasticDuck();
+
+        plasticDuck.performFly(); // 實作他的飛
     }
 }

@@ -1,6 +1,6 @@
 package 第一章策略模式.Payment_Strategy;
 
-public class LinePayPayment implements PaymentStrategy{
+public class LinePayPayment implements PaymentBehavior {
     private String accountId;
 
     public LinePayPayment(String accountId){

@@ -1,6 +1,6 @@
 package 第一章策略模式.Payment_Strategy;
 
-public class CreditCardPayment implements PaymentStrategy{
+public class CreditCardPayment implements PaymentBehavior {
 
     private String cardNumber;
 
