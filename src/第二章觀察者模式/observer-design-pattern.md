@@ -8,12 +8,14 @@
 - **職責**：
     1. 管理觀察者列表（註冊和移除觀察者）
     2. 當自身狀態變化時，通知所有註冊的觀察者
-
+  3. 不要傳遞所有更新的數據給observer,而是讓observer收到有更新自己來拉取要的資料
+  4. 為了讓observer可以拉取,所以要多get數據的方法
 ### Observer（觀察者）
 - **定義**：Observer是接收通知並做出反應的對象。
 - **職責**：
     1. 提供一個更新方法，用於接收來自Subject的通知
     2. 根據接收到的通知執行相應的操作
+  3. 得到
 
 ## 觀察者模式的工作流程
 
@@ -37,7 +39,7 @@ public interface Subject {
 
 // 觀察者接口
 public interface Observer {
-    public void update(float temp, float humidity, float pressure);
+    public void update();
 }
 
 // 顯示元素接口
@@ -74,9 +76,21 @@ public class WeatherData implements Subject {
     
     public void notifyObservers() {
         for (Observer observer : observers) {
-            observer.update(temperature, humidity, pressure);
+//            observer.update(temperature, humidity, pressure);
+          observer.update();
         }
     }
+
+  // 讓observer可以get最新數據
+  public float getHumidity(){
+    return humidity;
+  }
+  public float getTemperature(){
+    return temperature;
+  }
+  public float getPressure(){
+    return pressure;
+  }
     
     public void measurementsChanged() {
         notifyObservers();
